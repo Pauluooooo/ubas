@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>用户行为分析系统</title>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- 引入登录页 CSS 样式 -->
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div id="app">
+  <div class="container">
+    <el-card class="card">
+      <div class="logo">用户行为分析系统</div>
+      <el-tabs v-model="activeTab">
+        <el-tab-pane label="账号登录" name="login">
+          <el-form :model="form" label-position="top" label-width="500px">
+            <el-form-item label="用户名">
+              <el-input v-model="form.username" placeholder="请输入用户名" ></el-input>
+            </el-form-item>
+            <el-form-item label="密码">
+              <el-input type="password" v-model="form.password" placeholder="请输入密码"></el-input>
+            </el-form-item>
+          </el-form>
+        </el-tab-pane>
+        <el-tab-pane label="手机号登录" name="phone">
+          <el-form :model="form" label-position="top" label-width="80px">
+            <el-form-item label="手机号">
+              <div class="phone-input-container">
+                <el-input v-model="form.phone" placeholder="请输入手机号"></el-input>
+                <el-button type="primary" @click="getCode" :disabled="countdown > 0" class="code-btn">{{ countdown > 0 ? `${countdown} s` : '获取验证码' }}</el-button>
+              </div>
+            </el-form-item>
+            <el-form-item label="验证码">
+              <el-input v-model="form.code" placeholder="请输入验证码"></el-input>
+            </el-form-item>
+          </el-form>
+        </el-tab-pane>
+        <el-tab-pane label="注册" name="register">
+          <el-form :model="form" label-position="top" label-width="80px">
+            <el-form-item label="用户名">
+              <el-input v-model="form.username" placeholder="请输入用户名"></el-input>
+            </el-form-item>
+            <el-form-item label="密码">
+              <el-input type="password" v-model="form.password" placeholder="请输入密码"></el-input>
+            </el-form-item>
+            <el-form-item label="确认密码">
+              <el-input type="password" v-model="form.confirmPassword" placeholder="请再次输入密码"></el-input>
+            </el-form-item>
+          </el-form>
+        </el-tab-pane>
+      </el-tabs>
+      <div class="btn-box">
+        <el-button type="primary" @click="submitForm">{{ activeTab === 'login' ? '登录' : '注册' }}</el-button>
+      </div>
+      <div style="text-align: center; margin-top: 20px;">
+        <span v-show="activeTab === 'login'">没有账号？</span>
+        <span v-show="activeTab === 'register'">已有账号？</span>
+        <a v-if="showLink" href="#" @click.prevent="toggleTab">{{ activeTab === 'login'? '立即注册' : '立即登录' }}</a>
+      </div>
+    </el-card>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        activeTab: 'login', // 当前选中的标签页
+        form: { // 表单数据
+          username: '',
+          password: '',
+          confirmPassword: '',
+          phone: '',
+          code: ''
+        },
+        countdown: 0, // 获取验证码倒计时
+        showLink: true
+      };
+    },
+    methods: {
+      toggleTab() {
+        if (this.activeTab !== 'phone') {
+          this.activeTab = this.activeTab === 'login' ? 'regoster' : 'login';
+          this.showLink = this.activeTab !== 'phone';
+        }
+      },
+      submitForm() {
+        if (this.activeTab === 'register') {
+          // 注册逻辑
+          console.log('注册');
+        } else {
+          // 登录逻辑
+          console.log('登录');
+        }
+      },getCode() {
+        if (this.countdown > 0) return;
+        if (!/^1\d{10}$/.test(this.form.phone)) {
+          this.$message.error('请输入正确的手机号');
+          return;
+        }
+        // 发送验证码请求
+        console.log('发送验证码');
+        this.countdown = 60;
+        let countdownTimer = setInterval(() => {
+          this.countdown--;
+          if (this.countdown <= 0) {
+            clearInterval(countdownTimer);
+          }
+        }, 1000);
+      }
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+body{
+    background-image:url('../imgs/bg.png') ;
+    background-size: cover;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.logo {
+    font-size:32px;
+    color: #409EFF;
+    padding-left: 150px;
+    padding-right: 150px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.btn-box {
+    text-align: center;
+    margin-top: 20px;
+}
+.phone-input-container {
+    display: flex;
+    align-items: center;
+}
+.phone-input-container .el-input {
+    flex: 1;
+}
+.phone-input-container .code-btn {
+    margin-left: 10px;
+}
