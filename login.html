@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>用户行为分析系统</title>
-    <link rel="stylesheet" href="./css/http_unpkg.com_element-ui_lib_theme-chalk_index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.13/lib/theme-chalk/index.css">
     <!-- 引入登录页 CSS 样式 -->
     <link rel="stylesheet" href="css/login.css">
 </head>
@@ -13,43 +13,48 @@
         <el-card class="card">
             <div class="logo">用户行为分析系统</div>
             <el-tabs v-model="activeTab">
+                <!-- 账号密码登录页 -->
                 <el-tab-pane label="账号登录" name="login">
-                    <el-form :model="form" label-position="top" label-width="500px">
+                    <el-form :model="loginForm" label-position="top" label-width="500px">
                         <el-form-item label="用户名">
-                            <el-input v-model="form.username" placeholder="请输入用户名"></el-input>
+                            <el-input v-model="loginForm.username" placeholder="请输入用户名"></el-input>
                         </el-form-item>
                         <el-form-item label="密码">
-                            <el-input type="password" v-model="form.password" placeholder="请输入密码"></el-input>
+                            <el-input type="password" v-model="loginForm.password" placeholder="请输入密码"></el-input>
                         </el-form-item>
                     </el-form>
                 </el-tab-pane>
+                <!-- 手机登录页 -->
                 <el-tab-pane label="手机号登录" name="phone">
-                    <el-form :model="form" label-position="top" label-width="80px">
+                    <el-form :model="phoneForm" label-position="top" label-width="80px">
                         <el-form-item label="手机号">
                             <div class="phone-input-container">
-                                <el-input v-model="form.phone" placeholder="请输入手机号"></el-input>
+                                <el-input v-model="phoneForm.phone" placeholder="请输入手机号"></el-input>
                                 <el-button type="primary" @click="getCode" :disabled="countdown > 0" class="code-btn">{{
                                     countdown > 0 ? `${countdown} s` : '获取验证码' }}
                                 </el-button>
                             </div>
                         </el-form-item>
                         <el-form-item label="验证码">
-                            <el-input v-model="form.code" placeholder="请输入验证码"></el-input>
+                            <el-input v-model="phoneForm.code" placeholder="请输入验证码"></el-input>
                         </el-form-item>
                     </el-form>
                 </el-tab-pane>
+                <!-- 注册页 -->
                 <el-tab-pane label="注册" name="register">
-                    <el-form :model="form" label-position="top" label-width="80px">
+                    <el-form :model="registerForm" label-position="top" label-width="80px">
                         <el-form-item label="用户名">
-                            <el-input v-model="form.username" placeholder="请输入用户名"></el-input>
+                            <el-input v-model="registerForm.username" placeholder="请输入用户名"></el-input>
                         </el-form-item>
                         <el-form-item label="密码">
-                            <el-input type="password" v-model="form.password" placeholder="请输入密码"></el-input>
+                            <el-input type="password" v-model="registerForm.password"
+                                      placeholder="请输入密码"></el-input>
                         </el-form-item>
                         <el-form-item label="确认密码">
-                            <el-input type="password" v-model="form.confirmPassword"
+                            <el-input type="password" v-model="registerForm.confirmPassword"
                                       placeholder="请再次输入密码"></el-input>
                         </el-form-item>
+                        <div id="error-message">{{errorMessage}}</div>
                     </el-form>
                 </el-tab-pane>
             </el-tabs>
@@ -75,7 +80,6 @@
 <script src="./js/http_cdn.jsdelivr.net_npm_vue_dist_vue.js"></script>
 <script src="./js/http_unpkg.com_axios_dist_axios.js"></script>
 <script src="./js/http_unpkg.com_element-ui_lib_index.js"></script>
-<script src="./js/http_unpkg.com_element-ui_lib_index.js"></script>
 
 <script>
     new Vue({
@@ -83,15 +87,22 @@
         // 封装数据
         data() {
             return {
-                activeTab: 'login', // 当前选中的标签页
-                form: { // 表单数据
+                activeTab: 'login', // 初始的页面
+                loginForm: {
                     username: '',
                     password: '',
-                    confirmPassword: '',
-                    phone: '',
-                    code: ''
                 },
-                countdown: 0, // 获取验证码倒计时
+                registerForm: { // 注册表单数据
+                    username: '',
+                    password: '',
+                    confirmPassword: ''
+                },
+                phoneForm: {
+                    phone: '',
+                    code: '',
+                },
+                errorMessage: '', // 错误信息
+                countdown: 0 // 获取验证码倒计时
             };
         },
         // 按钮内容
@@ -104,29 +115,77 @@
                 }
             }
         },
-        // 方法
         methods: {
             // 切换页面底部文字
             toggleTab() {
                 this.activeTab = this.activeTab === 'login' ? 'register' : 'login';
             },
+            // 验证注册表单
+            validateRegisterForm() {
+                let username = this.registerForm.username.trim();
+                let password = this.registerForm.password.trim();
+                let confirmPassword = this.registerForm.confirmPassword.trim();
+                // 最大和最小密码位数
+                const MIN_PASSWORD_LENGTH = 6;
+                const MAX_PASSWORD_LENGTH = 12;
+
+                if (username === '') {
+                    this.showErrorNotification('用户名不能为空！');
+                    return false;
+                }
+
+                if (password === '') {
+                    this.showErrorNotification('密码不能为空！');
+                    return false;
+                } else if (password.length < MIN_PASSWORD_LENGTH || password.length > MAX_PASSWORD_LENGTH) {
+                    this.showErrorNotification(`密码长度需在${MIN_PASSWORD_LENGTH}-${MAX_PASSWORD_LENGTH}位之间！`);
+                    return false;
+                }
+
+                if (confirmPassword !== password) {
+                    this.showErrorNotification('两次输入的密码不一致！');
+                    return false;
+                }
+                // 验证无误，返回
+                return true;
+            },
             // 提交表单
             submitForm() {
                 if (this.activeTab === 'register') {
-                    // TODO 实现注册功能
-                    console.log('注册');
-
-                } else {
-                    // TODO 实现登录功能
-                    console.log('登录');
-
+                    // 校验数据
+                    if (this.validateRegisterForm()) {
+                        // TODO 发送请求
+                        axios.post('/index/register', this.registerForm)
+                            .then(response => {
+                                console.log(response.data());
+                            })
+                            .catch(error => {
+                                console.error(error)
+                            });
+                    }
+                } else if (this.activeTab === 'login') {
+                    // 登录表单校验
+                    if (this.validateForm()) {
+                        // TODO 实现登录功能
+                        axios.post('/index/login', this.form)
+                            .then(response => {
+                                console.log(response.data());
+                            })
+                            .catch(error => {
+                                console.error(error)
+                            });
+                    }
                 }
             },
             // 发送验证码
             getCode() {
                 if (this.countdown > 0) return;
-                if (!/^1\d{10}$/.test(this.form.phone)) {
-                    this.$message.error('请输入正确的手机号');
+                if (this.phoneForm.phone === '') {
+                    this.showErrorNotification('手机号不能为空！');
+                    return;
+                }
+                if (!/^1\d{10}$/.test(this.phoneForm.phone)) {
+                    this.showErrorNotification('请输入正确的手机号！')
                     return;
                 }
                 // TODO 实现发送验证码功能
@@ -139,7 +198,31 @@
                         clearInterval(countdownTimer);
                     }
                 }, 1000);
+            },
+            validateForm() {
+                let username = this.loginForm.username.trim();
+                let password = this.loginForm.password.trim();
+
+                if (username === '') {
+                    this.showErrorNotification('用户名不能为空！');
+                    return false;
+                }
+
+                if (password === '') {
+                    this.showErrorNotification('密码不能为空！')
+                    return false;
+                }
+
+                return true;
+            },
+            showErrorNotification(message) {
+                // 显示错误通知
+                this.$notify.error({
+                    title: '错误',
+                    message: message
+                });
             }
+
         }
     });
 </script>
