@@ -154,8 +154,7 @@
                 if (this.activeTab === 'register') {
                     // 校验数据
                     if (this.validateRegisterForm()) {
-                        // TODO 发送请求
-                        axios.post('/index/register', this.registerForm)
+                        axios.post('/user/register', this.registerForm)
                             .then(response => {
                                 console.log(response.data());
                             })
@@ -166,8 +165,7 @@
                 } else if (this.activeTab === 'login') {
                     // 登录表单校验
                     if (this.validateForm()) {
-                        // TODO 实现登录功能
-                        axios.post('/index/login', this.form)
+                        axios.post('/user/login', this.form)
                             .then(response => {
                                 console.log(response.data());
                             })
