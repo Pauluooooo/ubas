@@ -1,5 +1,5 @@
 body{
-    background-image:url('../imgs/bg.png') ;
+    background-image:url('../imgs/backgroud.png') ;
     background-size: cover;
 }
 .container {
@@ -12,7 +12,7 @@ body{
 }
 .logo {
     font-size:32px;
-    color: #409EFF;
+    color: #17a2b8;
     padding-left: 150px;
     padding-right: 150px;
     font-weight: bold;

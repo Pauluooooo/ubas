@@ -165,7 +165,7 @@
                 } else if (this.activeTab === 'login') {
                     // 登录表单校验
                     if (this.validateForm()) {
-                        axios.post('/api/user/login', this.form)
+                        axios.post('/api/user/login', this.loginForm)
                             .then(response => {
                                 console.log(response.data());
                             })
