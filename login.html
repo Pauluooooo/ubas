@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>用户行为分析系统</title>
-    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.13/lib/theme-chalk/index.css">
     <!-- 引入登录页 CSS 样式 -->
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 </head>
 <body>
 <div id="app">
@@ -36,7 +36,7 @@
                             </div>
                         </el-form-item>
                         <el-form-item label="验证码">
-                            <el-input v-model="phoneForm.code" placeholder="请输入验证码"></el-input>
+                            <el-input v-model="phoneForm.phoneCode" placeholder="请输入验证码"></el-input>
                         </el-form-item>
                     </el-form>
                 </el-tab-pane>
@@ -77,152 +77,10 @@
     </div>
 </div>
 
-<script src="./js/http_cdn.jsdelivr.net_npm_vue_dist_vue.js"></script>
-<script src="./js/http_unpkg.com_axios_dist_axios.js"></script>
-<script src="./js/http_unpkg.com_element-ui_lib_index.js"></script>
+<script src="js/http_cdn.jsdelivr.net_npm_vue_dist_vue.js"></script>
+<script src="js/http_unpkg.com_axios_dist_axios.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="js/login.js"></script>
 
-<script>
-    new Vue({
-        el: '#app',
-        // 封装数据
-        data() {
-            return {
-                activeTab: 'login', // 初始的页面
-                loginForm: {
-                    username: '',
-                    password: '',
-                },
-                registerForm: { // 注册表单数据
-                    username: '',
-                    password: '',
-                    confirmPassword: ''
-                },
-                phoneForm: {
-                    phone: '',
-                    code: '',
-                },
-                errorMessage: '', // 错误信息
-                countdown: 0 // 获取验证码倒计时
-            };
-        },
-        // 按钮内容
-        computed: {
-            buttonText() {
-                if (this.activeTab === 'login' || this.activeTab === 'phone') {
-                    return '登录';
-                } else {
-                    return '注册';
-                }
-            }
-        },
-        methods: {
-            // 切换页面底部文字
-            toggleTab() {
-                this.activeTab = this.activeTab === 'login' ? 'register' : 'login';
-            },
-            // 验证注册表单
-            validateRegisterForm() {
-                let username = this.registerForm.username.trim();
-                let password = this.registerForm.password.trim();
-                let confirmPassword = this.registerForm.confirmPassword.trim();
-                // 最大和最小密码位数
-                const MIN_PASSWORD_LENGTH = 6;
-                const MAX_PASSWORD_LENGTH = 12;
-
-                if (username === '') {
-                    this.showErrorNotification('用户名不能为空！');
-                    return false;
-                }
-
-                if (password === '') {
-                    this.showErrorNotification('密码不能为空！');
-                    return false;
-                } else if (password.length < MIN_PASSWORD_LENGTH || password.length > MAX_PASSWORD_LENGTH) {
-                    this.showErrorNotification(`密码长度需在${MIN_PASSWORD_LENGTH}-${MAX_PASSWORD_LENGTH}位之间！`);
-                    return false;
-                }
-
-                if (confirmPassword !== password) {
-                    this.showErrorNotification('两次输入的密码不一致！');
-                    return false;
-                }
-                // 验证无误，返回
-                return true;
-            },
-            // 提交表单
-            submitForm() {
-                if (this.activeTab === 'register') {
-                    // 校验数据
-                    if (this.validateRegisterForm()) {
-                        axios.post('/api/user/register', this.registerForm)
-                            .then(response => {
-                               this.activeTab = 'login'
-                            })
-                            .catch(error => {
-                                console.error(error)
-                            });
-                    }
-                } else if (this.activeTab === 'login') {
-                    // 登录表单校验
-                    if (this.validateForm()) {
-                        axios.post('/api/user/login', this.loginForm)
-                            .then(response => {
-                                location.href = "/index.html"
-                            })
-                            .catch(error => {
-                                console.error(error)
-                            });
-                    }
-                }
-            },
-            // 发送验证码
-            getCode() {
-                if (this.countdown > 0) return;
-                if (this.phoneForm.phone === '') {
-                    this.showErrorNotification('手机号不能为空！');
-                    return;
-                }
-                if (!/^1\d{10}$/.test(this.phoneForm.phone)) {
-                    this.showErrorNotification('请输入正确的手机号！')
-                    return;
-                }
-                // TODO 实现发送验证码功能
-                console.log('发送验证码');
-                // 验证码过期时间 单位：s
-                this.countdown = 60;
-                let countdownTimer = setInterval(() => {
-                    this.countdown--;
-                    if (this.countdown <= 0) {
-                        clearInterval(countdownTimer);
-                    }
-                }, 1000);
-            },
-            validateForm() {
-                let username = this.loginForm.username.trim();
-                let password = this.loginForm.password.trim();
-
-                if (username === '') {
-                    this.showErrorNotification('用户名不能为空！');
-                    return false;
-                }
-
-                if (password === '') {
-                    this.showErrorNotification('密码不能为空！')
-                    return false;
-                }
-
-                return true;
-            },
-            showErrorNotification(message) {
-                // 显示错误通知
-                this.$notify.error({
-                    title: '错误',
-                    message: message
-                });
-            }
-
-        }
-    });
-</script>
 </body>
 </html>
