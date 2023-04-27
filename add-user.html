@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>数据导入</title>
+    <title>用户行为分析系统</title>
     <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<div class="page">
+<div class="page" id="app">
     <!-- 侧边栏 -->
     <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
         <div class="container-fluid">
@@ -31,24 +31,6 @@
                                     </svg>
                                 </span>
                                 <span class="nav-link-title">主页</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="location.href='import.html'">
-                                <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                         class="icon icon-tabler icon-tabler-database-import" width="24" height="24"
-                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                         stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M4 6c0 1.657 3.582 3 8 3s8 -1.343 8 -3s-3.582 -3 -8 -3s-8 1.343 -8 3"></path>
-                                        <path d="M4 6v6c0 1.657 3.582 3 8 3c.856 0 1.68 -.05 2.454 -.144m5.546 -2.856v-6"></path>
-                                        <path d="M4 12v6c0 1.657 3.582 3 8 3c.171 0 .341 -.002 .51 -.006"></path>
-                                        <path d="M19 22v-6"></path>
-                                        <path d="M22 19l-3 -3l-3 3"></path>
-                                    </svg>
-                                </span>
-                                <span class="nav-link-title">数据导入</span>
                             </a>
                         </li>
                         <li class="nav-item dropdown">
@@ -86,7 +68,7 @@
                                                 fill="#434A54" p-id="5054"></path>
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">用户点击分析</span>
+                                    <span class="nav-link-title">时间维度分析</span>
                                 </a>
                                 <a class="dropdown-item" href="#" onclick="location.href='chart-buy.html'">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -105,7 +87,7 @@
                                                 fill="#434A54" p-id="5054"></path>
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">用户购买分析</span>
+                                    <span class="nav-link-title">行为分析</span>
                                 </a>
                                 <a class="dropdown-item" href="#" onclick="location.href='chart-cart.html'">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -124,26 +106,7 @@
                                                 fill="#434A54" p-id="5054"></path>
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">用户加入购物车分析</span>
-                                </a>
-                                <a class="dropdown-item" href="#" onclick="location.href='chart-collection.html'">
-                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                        <svg t="1680784105260" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                                             xmlns="http://www.w3.org/2000/svg" p-id="5049"
-                                             width="200" height="200"><path
-                                                d="M277.398 874.572c0 11.78-9.53 21.34-21.34 21.34H128.088c-11.746 0-21.306-9.56-21.306-21.34V618.63c0-11.778 9.56-21.308 21.306-21.308h127.97c11.81 0 21.34 9.532 21.34 21.308v255.942z"
-                                                fill="#A0D468" p-id="5050"></path><path
-                                                d="M490.694 874.572c0 11.78-9.56 21.34-21.34 21.34h-127.97c-11.778 0-21.338-9.56-21.338-21.34V277.396c0-11.78 9.56-21.338 21.338-21.338h127.97c11.78 0 21.34 9.558 21.34 21.338v597.176z"
-                                                fill="#4FC2E9" p-id="5051"></path><path
-                                                d="M703.958 874.572c0 11.78-9.53 21.34-21.308 21.34H554.68c-11.78 0-21.34-9.56-21.34-21.34V490.66c0-11.78 9.56-21.306 21.34-21.306h127.968c11.78 0 21.308 9.528 21.308 21.306v383.912z"
-                                                fill="#48CFAD" p-id="5052"></path><path
-                                                d="M917.252 874.572c0 11.78-9.56 21.34-21.338 21.34h-127.972c-11.778 0-21.306-9.56-21.306-21.34V149.426c0-11.78 9.53-21.338 21.306-21.338h127.972c11.778 0 21.338 9.558 21.338 21.338v725.146z"
-                                                fill="#5D9CEC" p-id="5053"></path><path
-                                                d="M1002.576 853.266H21.458c-11.78 0-21.34 9.528-21.34 21.306s9.56 21.34 21.34 21.34h981.12c11.78 0 21.306-9.56 21.306-21.34s-9.528-21.306-21.308-21.306z"
-                                                fill="#434A54" p-id="5054"></path>
-                                        </svg>
-                                    </span>
-                                    <span class="nav-link-title">用户收藏商品分析</span>
+                                    <span class="nav-link-title">商品分析</span>
                                 </a>
                             </div>
                         </li>
@@ -170,7 +133,7 @@
                                 <span class="nav-link-title">管理员模块</span>
                             </a>
                             <div class="dropdown-menu" data-bs-popper="static">
-                                <a class="dropdown-item" href="#" onclick="location.href='change-user.html'">
+                                <a class="dropdown-item" href="#" onclick="location.href='add-user.html'">
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                  class="icon icon-tabler icon-tabler-user-edit" width="24" height="24"
@@ -182,9 +145,9 @@
                                                 <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>
                                             </svg>
                                         </span>
-                                    <span class="nav-link-title">修改用户</span>
+                                    <span class="nav-link-title">添加用户</span>
                                 </a>
-                                <a class="dropdown-item" href="#" onclick="location.href='change-admin.html'">
+                                <a class="dropdown-item" href="#" onclick="location.href='change-password.html'">
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                  class="icon icon-tabler icon-tabler-user-edit" width="24" height="24"
@@ -196,7 +159,7 @@
                                                 <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>
                                             </svg>
                                         </span>
-                                    <span class="nav-link-title">修改管理员</span>
+                                    <span class="nav-link-title">修改密码</span>
                                 </a>
                             </div>
                         </li>
@@ -205,24 +168,86 @@
             </div>
         </div>
     </aside>
-
     <div class="page-wrapper" id="banner">
         <div class="page-body" id="main-display">
-            <form class="dropzone" id="dropzone-default" action="." autocomplete="off" novalidate>
-                <div class="fallback">
-                    <input name="file" type="file"/>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">添加用户</h3>
+                            <form id="addForm">
+                                <div class="form-group">
+                                    <label class="form-label" for="username">用户名</label>
+                                    <input type="text" class="form-control" id="username" name="username"
+                                           v-model="username"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="password">密码</label>
+                                    <input type="password" class="form-control" id="password" name="password"
+                                           v-model="password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">手机号码</label>
+                                    <input type="text" class="form-control" id="phone" name="phone"
+                                           v-model="phone"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">角色</label>
+                                    <select class="form-control" name="role" v-model="role">
+                                        <option value="0">管理员</option>
+                                        <option value="1">用户</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary" @click.prevent="addUser">添加用户
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
-
-<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+<script src="js/http_cdn.jsdelivr.net_npm_vue_dist_vue.js"></script>
+<script src="js/http_unpkg.com_axios_dist_axios.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        new Dropzone("#dropzone-default")
-    })
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                username: '',
+                password: '',
+                phone: '',
+                role: ''
+            };
+        },
+        methods: {
+            addUser() {
+                const payload = {
+                    username: this.username,
+                    password: this.password,
+                    phone: this.phone,
+                    role: this.role,
+                };
+                axios.post('/api/user/add/user', payload)
+                    .then(response => {
+                        const success = response.data.success;
+                        if (success) {
+                            alert('添加成功');
+                            document.getElementById('addForm').reset();
+                        } else {
+                            const errorMsg = response.data.errorMsg;
+                            alert(errorMsg);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('添加用户失败：', error);
+                    });
+            },
+        },
+    });
 </script>
 </body>
-</h
+</html>

@@ -10,145 +10,174 @@
 <body>
 <div class="page">
     <!-- 侧边栏 -->
-    <aside class="navbar navbar-vertical navbar-expand-sm navbar-dark">
+    <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <h1 class="navbar-brand navbar-brand-autodark">
+            <a href="#" onclick="location.href='index.html'" class="navbar-brand navbar-brand-autodark">
                 用户网购行为分析系统
-            </h1>
-            <div class="collapse navbar-collapse" id="sidebar-menu">
-                <ul class="navbar-nav pt-lg-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" data-target="index">
-                          <span class="nav-link-title">
-                            主页
-                          </span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);" data-target="import">
-                          <span class="nav-link-title">
-                            数据导入
-                          </span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <p class="nav-link dropdown-toggle" data-bs-toggle="dropdown">用户行为可视化</p>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0);" data-target="chart-click">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                         class="icon icon-tabler icon-tabler-chart-pie" width="24" height="24"
+            </a>
+            <div class="navbar-collapse collapse show" id="sidebar-menu">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav pt-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="location.href='index.html'">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                          stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M10 3.2a9 9 0 1 0 10.8 10.8a1 1 0 0 0 -1 -1h-6.8a2 2 0 0 1 -2 -2v-7a.9 .9 0 0 0 -1 -.8"></path>
-                                        <path d="M15 3.5a9 9 0 0 1 5.5 5.5h-4.5a1 1 0 0 1 -1 -1v-4.5"></path>
+                                        <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+                                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
                                     </svg>
-                                    用户点击分析
+                                </span>
+                                <span class="nav-link-title">主页</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="false"
+                               role="button" aria-expanded="true">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                         viewBox="0 0 24 24"
+                                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                         stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"
+                                                                       fill="none"></path><path
+                                            d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5"></path><path
+                                            d="M12 12l8 -4.5"></path><path
+                                            d="M12 12l0 9"></path><path d="M12 12l-8 -4.5"></path><path
+                                            d="M16 5.25l-8 4.5"></path>
+                                    </svg>
+                                </span>
+                                <span class="nav-link-title">用户行为可视化</span>
+                            </a>
+                            <div class="dropdown-menu" data-bs-popper="static">
+                                <a class="dropdown-item" href="#" onclick="location.href='chart-click.html'">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <svg t="1680784105260" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg" p-id="5049"
+                                             width="200" height="200"><path
+                                                d="M277.398 874.572c0 11.78-9.53 21.34-21.34 21.34H128.088c-11.746 0-21.306-9.56-21.306-21.34V618.63c0-11.778 9.56-21.308 21.306-21.308h127.97c11.81 0 21.34 9.532 21.34 21.308v255.942z"
+                                                fill="#A0D468" p-id="5050"></path><path
+                                                d="M490.694 874.572c0 11.78-9.56 21.34-21.34 21.34h-127.97c-11.778 0-21.338-9.56-21.338-21.34V277.396c0-11.78 9.56-21.338 21.338-21.338h127.97c11.78 0 21.34 9.558 21.34 21.338v597.176z"
+                                                fill="#4FC2E9" p-id="5051"></path><path
+                                                d="M703.958 874.572c0 11.78-9.53 21.34-21.308 21.34H554.68c-11.78 0-21.34-9.56-21.34-21.34V490.66c0-11.78 9.56-21.306 21.34-21.306h127.968c11.78 0 21.308 9.528 21.308 21.306v383.912z"
+                                                fill="#48CFAD" p-id="5052"></path><path
+                                                d="M917.252 874.572c0 11.78-9.56 21.34-21.338 21.34h-127.972c-11.778 0-21.306-9.56-21.306-21.34V149.426c0-11.78 9.53-21.338 21.306-21.338h127.972c11.778 0 21.338 9.558 21.338 21.338v725.146z"
+                                                fill="#5D9CEC" p-id="5053"></path><path
+                                                d="M1002.576 853.266H21.458c-11.78 0-21.34 9.528-21.34 21.306s9.56 21.34 21.34 21.34h981.12c11.78 0 21.306-9.56 21.306-21.34s-9.528-21.306-21.308-21.306z"
+                                                fill="#434A54" p-id="5054"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">时间维度分析</span>
                                 </a>
-                                <a class="dropdown-item" href="javascript:void(0);" data-target="chart-buy">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                         class="icon icon-tabler icon-tabler-chart-pie" width="24" height="24"
-                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                         stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M10 3.2a9 9 0 1 0 10.8 10.8a1 1 0 0 0 -1 -1h-6.8a2 2 0 0 1 -2 -2v-7a.9 .9 0 0 0 -1 -.8"></path>
-                                        <path d="M15 3.5a9 9 0 0 1 5.5 5.5h-4.5a1 1 0 0 1 -1 -1v-4.5"></path>
-                                    </svg>
-                                    用户购买分析
+                                <a class="dropdown-item" href="#" onclick="location.href='chart-buy.html'">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <svg t="1680784105260" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg" p-id="5049"
+                                             width="200" height="200"><path
+                                                d="M277.398 874.572c0 11.78-9.53 21.34-21.34 21.34H128.088c-11.746 0-21.306-9.56-21.306-21.34V618.63c0-11.778 9.56-21.308 21.306-21.308h127.97c11.81 0 21.34 9.532 21.34 21.308v255.942z"
+                                                fill="#A0D468" p-id="5050"></path><path
+                                                d="M490.694 874.572c0 11.78-9.56 21.34-21.34 21.34h-127.97c-11.778 0-21.338-9.56-21.338-21.34V277.396c0-11.78 9.56-21.338 21.338-21.338h127.97c11.78 0 21.34 9.558 21.34 21.338v597.176z"
+                                                fill="#4FC2E9" p-id="5051"></path><path
+                                                d="M703.958 874.572c0 11.78-9.53 21.34-21.308 21.34H554.68c-11.78 0-21.34-9.56-21.34-21.34V490.66c0-11.78 9.56-21.306 21.34-21.306h127.968c11.78 0 21.308 9.528 21.308 21.306v383.912z"
+                                                fill="#48CFAD" p-id="5052"></path><path
+                                                d="M917.252 874.572c0 11.78-9.56 21.34-21.338 21.34h-127.972c-11.778 0-21.306-9.56-21.306-21.34V149.426c0-11.78 9.53-21.338 21.306-21.338h127.972c11.778 0 21.338 9.558 21.338 21.338v725.146z"
+                                                fill="#5D9CEC" p-id="5053"></path><path
+                                                d="M1002.576 853.266H21.458c-11.78 0-21.34 9.528-21.34 21.306s9.56 21.34 21.34 21.34h981.12c11.78 0 21.306-9.56 21.306-21.34s-9.528-21.306-21.308-21.306z"
+                                                fill="#434A54" p-id="5054"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">行为分析</span>
                                 </a>
-                                <a class="dropdown-item" href="javascript:void(0);" data-target="chart-cart">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                         class="icon icon-tabler icon-tabler-chart-pie" width="24" height="24"
-                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                         stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M10 3.2a9 9 0 1 0 10.8 10.8a1 1 0 0 0 -1 -1h-6.8a2 2 0 0 1 -2 -2v-7a.9 .9 0 0 0 -1 -.8"></path>
-                                        <path d="M15 3.5a9 9 0 0 1 5.5 5.5h-4.5a1 1 0 0 1 -1 -1v-4.5"></path>
-                                    </svg>
-                                    用户加入购物车分析
-                                </a>
-                                <a class="dropdown-item" href="javascript:void(0);" data-target="chart-collection">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                         class="icon icon-tabler icon-tabler-chart-pie" width="24" height="24"
-                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                         stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M10 3.2a9 9 0 1 0 10.8 10.8a1 1 0 0 0 -1 -1h-6.8a2 2 0 0 1 -2 -2v-7a.9 .9 0 0 0 -1 -.8"></path>
-                                        <path d="M15 3.5a9 9 0 0 1 5.5 5.5h-4.5a1 1 0 0 1 -1 -1v-4.5"></path>
-                                    </svg>
-                                    用户收藏商品分析
+                                <a class="dropdown-item" href="#" onclick="location.href='chart-cart.html'">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <svg t="1680784105260" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg" p-id="5049"
+                                             width="200" height="200"><path
+                                                d="M277.398 874.572c0 11.78-9.53 21.34-21.34 21.34H128.088c-11.746 0-21.306-9.56-21.306-21.34V618.63c0-11.778 9.56-21.308 21.306-21.308h127.97c11.81 0 21.34 9.532 21.34 21.308v255.942z"
+                                                fill="#A0D468" p-id="5050"></path><path
+                                                d="M490.694 874.572c0 11.78-9.56 21.34-21.34 21.34h-127.97c-11.778 0-21.338-9.56-21.338-21.34V277.396c0-11.78 9.56-21.338 21.338-21.338h127.97c11.78 0 21.34 9.558 21.34 21.338v597.176z"
+                                                fill="#4FC2E9" p-id="5051"></path><path
+                                                d="M703.958 874.572c0 11.78-9.53 21.34-21.308 21.34H554.68c-11.78 0-21.34-9.56-21.34-21.34V490.66c0-11.78 9.56-21.306 21.34-21.306h127.968c11.78 0 21.308 9.528 21.308 21.306v383.912z"
+                                                fill="#48CFAD" p-id="5052"></path><path
+                                                d="M917.252 874.572c0 11.78-9.56 21.34-21.338 21.34h-127.972c-11.778 0-21.306-9.56-21.306-21.34V149.426c0-11.78 9.53-21.338 21.306-21.338h127.972c11.778 0 21.338 9.558 21.338 21.338v725.146z"
+                                                fill="#5D9CEC" p-id="5053"></path><path
+                                                d="M1002.576 853.266H21.458c-11.78 0-21.34 9.528-21.34 21.306s9.56 21.34 21.34 21.34h981.12c11.78 0 21.306-9.56 21.306-21.34s-9.528-21.306-21.308-21.306z"
+                                                fill="#434A54" p-id="5054"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">商品分析</span>
                                 </a>
                             </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <p class="nav-link dropdown-toggle" data-bs-toggle="dropdown">管理员模块</p>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0);" data-target="change-user">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                         class="icon icon-tabler icon-tabler-user-edit" width="24" height="24"
-                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                         stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5"></path>
-                                        <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>
-                                    </svg>
-                                    修改用户
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="false"
+                               role="button" aria-expanded="true">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             class="icon icon-tabler icon-tabler-user-cog" width="24" height="24"
+                                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                             stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                            <path d="M6 21v-2a4 4 0 0 1 4 -4h2.5"></path>
+                                            <path d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                                            <path d="M19.001 15.5v1.5"></path>
+                                            <path d="M19.001 21v1.5"></path>
+                                            <path d="M22.032 17.25l-1.299 .75"></path>
+                                            <path d="M17.27 20l-1.3 .75"></path>
+                                            <path d="M15.97 17.25l1.3 .75"></path>
+                                            <path d="M20.733 20l1.3 .75"></path>
+                                        </svg>
+                                    </span>
+                                <span class="nav-link-title">管理模块</span>
+                            </a>
+                            <div class="dropdown-menu" data-bs-popper="static">
+                                <a class="dropdown-item" href="#" onclick="location.href='add-user.html'">
+                                        <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 class="icon icon-tabler icon-tabler-user-edit" width="24" height="24"
+                                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                                 stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                                <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5"></path>
+                                                <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>
+                                            </svg>
+                                        </span>
+                                    <span class="nav-link-title">添加用户</span>
                                 </a>
-                                <a class="dropdown-item" href="javascript:void(0);" data-target="change-admin">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                         class="icon icon-tabler icon-tabler-user-edit" width="24" height="24"
-                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                         stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5"></path>
-                                        <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>
-                                    </svg>
-                                    修改管理员
+                                <a class="dropdown-item" href="#" onclick="location.href='change-password.html'">
+                                        <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 class="icon icon-tabler icon-tabler-user-edit" width="24" height="24"
+                                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                                 stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                                <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5"></path>
+                                                <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>
+                                            </svg>
+                                        </span>
+                                    <span class="nav-link-title">修改密码</span>
                                 </a>
                             </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </aside>
 
+    <!-- Banner -->
     <div class="page-wrapper" id="banner">
-        <div class="page-header">
-            <div class="row align-items-center">
-                <div class="col-auto">
-                    <span class="avatar avatar-md" style="background-image: url('/imgs/head.jpg')"></span>
-                </div>
-                <div class="col">
-                    <h2 class="page-title">JIANLONG LUO</h2>
-                    <div class="page-subtitle">
-                        <div class="row">
-                            <div class="col-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-school"
-                                     width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"></path>
-                                    <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"></path>
-                                </svg>
-                                <a>毕业设计</a>
-                            </div>
-                            <div class="col-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                     class="icon icon-tabler icon-tabler-brand-github" width="24" height="24"
-                                     viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                     stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
-                                </svg>
-                                <a href="https://github.com/Pauluooooo/ubas" class="text-reset">访问源码</a>
-                            </div>
-                        </div>
+        <div class="page-header d-print-none">
+            <div class="container-xl">
+                <div class="row g-2 align-items-center">
+                    <div class="col">
+                        <div class="page-pretitle">毕业设计</div>
+                        <h2 class="page-title">用户数据分析系统</h2>
                     </div>
                 </div>
             </div>
@@ -156,24 +185,133 @@
 
         <!-- 主显示区 -->
         <div class="page-body" id="main-display">
-            <div class="card d-flex flex-column">
-                <div class="row row-0 flex-fill">
-                    <div class="col-md-3">
-                        <a href="#">
-                            <img src="/imgs/card.png" class="w-100 h-100 object-cover" alt="Card side image"/>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                            <h3 class="card-title">欢迎使用用户网购行为分析系统！</h3>
-                            <div class="text-muted">
-                                用户网购行为分析系统，是一个可以帮助您了解、分析、优化您的用户购物体验的智能系统。您可以通过本系统分析用户的行为数据，例如点击、购买、加入购物车、收藏等等指标，从而发现用户的需求和偏好，提高您的产品或服务的质量和效果，做到个性化推荐。本系统还可以为您提供个性化的建议和解决方案，让您轻松实现用户增长和留存的目标。
+            <div class="container-xl">
+                <div class="row row-cards">
+                    <div class="col-3">
+                        <div class="card card-lg">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                    <span class="text-white avatar">
+                                        <svg t="1680790132636" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg" p-id="7018" width="200" height="200"><path
+                                                d="M0 0h1024v1024H0z" fill="#FFFFFF" fill-opacity="0"
+                                                p-id="7019"></path><path
+                                                d="M512 586.666667a202.666667 202.666667 0 1 0 0-405.333334 202.666667 202.666667 0 0 0 0 405.333334z m0-341.333334a138.666667 138.666667 0 1 1 0 277.333334 138.666667 138.666667 0 0 1 0-277.333334z m288 539.733334v36.949333c0.042667 35.157333-12.885333 69.12-36.352 95.274667a32 32 0 0 1-47.701333-42.666667c12.928-14.506667 20.053333-33.194667 20.010666-52.608V785.066667a114.602667 114.602667 0 0 0-85.888-112.042667 32.64 32.64 0 0 0-23.936 3.029333 235.264 235.264 0 0 1-228.138666 0 32.896 32.896 0 0 0-24.149334-3.242666 114.688 114.688 0 0 0-85.930666 112.085333v36.949333c0 19.413333 7.082667 38.144 20.010666 52.608a32 32 0 0 1-47.701333 42.666667 142.677333 142.677333 0 0 1-36.352-95.274667v-36.949333a178.688 178.688 0 0 1 134.272-174.165333 96.810667 96.810667 0 0 1 71.168 9.557333 171.050667 171.050667 0 0 0 165.376 0 96.170667 96.170667 0 0 1 70.912-9.344 178.56 178.56 0 0 1 134.4 174.122667zM737.834667 209.962667a32 32 0 0 1 40.832-19.498667 160 160 0 0 1 53.333333 270.122667 32 32 0 1 1-42.666667-47.701334 96.042667 96.042667 0 0 0-32-162.133333 32 32 0 0 1-19.498666-40.789333z m190.165333 465.578666v30.805334a32 32 0 1 1-64 0v-30.805334a90.197333 90.197333 0 0 0-67.541333-88.192 32 32 0 0 1 15.573333-62.08 154.112 154.112 0 0 1 115.968 150.272zM192 479.530667a160 160 0 0 1 53.333333-270.122667 32 32 0 0 1 21.333334 60.330667 96.042667 96.042667 0 0 0-32 162.133333 32 32 0 0 1-42.666667 47.701333v-0.042666z m35.541333 126.762666a90.197333 90.197333 0 0 0-67.541333 88.192V725.333333a32 32 0 1 1-64 0v-30.805333a154.154667 154.154667 0 0 1 115.968-150.272 32 32 0 1 1 15.573333 62.037333z"
+                                                fill="#41416E" p-id="7020"></path>
+                                        </svg>
+                                    </span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="font-weight-medium">总共用户数</div>
+                                        <div class="text-muted">493,679</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="d-flex align-items-center pt-4 mt-auto">
-                                <span class="avatar" style="background-image: url(imgs/head.jpg)"></span>
-                                <div class="ms-3">
-                                    <div class="text-body">JIANLONG LUO</div>
-                                    <div class="text-muted">2023-4-2</div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card card-lg">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                    <span class="text-white avatar">
+                                        <svg t="1680794429612" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                             p-id="20825" width="200" height="200"><path
+                                                d="M786.5344 108.3392H242.2272c-73.0624 0-132.5056 59.4432-132.5056 132.5056v544.3072c0 73.0624 59.4432 132.5056 132.5056 132.5056h544.3072c73.0624 0 132.5056-59.4432 132.5056-132.5056V240.7936c0-73.0624-59.4432-132.4544-132.5056-132.4544z m71.0656 676.7616c0 39.168-31.8976 71.0656-71.0656 71.0656H242.2272c-39.168 0-71.0656-31.8976-71.0656-71.0656V240.7936c0-39.168 31.8976-71.0656 71.0656-71.0656h544.3072c39.168 0 71.0656 31.8976 71.0656 71.0656v544.3072z"
+                                                fill="#57576D" p-id="20826"></path><path
+                                                d="M514.4064 449.4848c82.0224 0 154.1632-52.3776 179.456-130.3552 5.2224-16.128-3.584-33.4848-19.712-38.7072-16.1792-5.2224-33.4848 3.584-38.7072 19.712-17.0496 52.5824-65.6896 87.9104-121.0368 87.9104-55.296 0-103.936-35.328-121.0368-87.8592-5.2224-16.128-22.5792-24.9344-38.7072-19.712a30.68928 30.68928 0 0 0-19.712 38.7072c25.2928 77.9264 97.4336 130.304 179.456 130.304z"
+                                                fill="#6893DF" p-id="20827"></path><path
+                                                d="M677.2224 712.0896H351.5392c-16.9472 0-30.72 13.7728-30.72 30.72s13.7728 30.72 30.72 30.72h325.6832c16.9472 0 30.72-13.7728 30.72-30.72s-13.7216-30.72-30.72-30.72z"
+                                                fill="#57576D" p-id="20828"></path>
+                                        </svg>
+                                    </span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="font-weight-medium">商品总数</div>
+                                        <div class="text-muted">3,222,027</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card card-lg">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                    <span class="text-white avatar">
+                                        <svg t="1680794239701" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             p-id="12285" width="200" height="200"><path
+                                                d="M933.376 693.646222l-239.672889 239.672889a112.981333 112.981333 0 0 1-159.800889 0L88.348444 487.822222A111.217778 111.217778 0 0 1 56.888889 398.904889V113.777778a56.888889 56.888889 0 0 1 56.888889-56.888889h285.127111a111.217778 111.217778 0 0 1 88.974222 31.345778l445.496889 445.496889a112.981333 112.981333 0 0 1 0 159.914666zM227.555556 170.666667a56.888889 56.888889 0 1 0 56.888888 56.888889 56.888889 56.888889 0 0 0-56.888888-56.888889z m548.750222 378.083555l-227.555556 227.555556 40.220445 40.220444 227.555555-227.555555z"
+                                                fill="#FF9800" p-id="12286"></path>
+                                        </svg>
+                                    </span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="font-weight-medium">商品种类</div>
+                                        <div class="text-muted">9072</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card card-lg">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                    <span class="text-white avatar">
+                                        <svg t="1680791117690" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             p-id="11238" width="200" height="200"><path
+                                                d="M512 197.2224l47.80032-40.87808 35.84-9.50272h31.35488l40.32512 9.50272 33.28 40.87808 5.12 50.03264v57.48736l-65.92512 93.32736-79.99488 72.45824-47.80032 19.92704-74.19904-37.23264-77.68064-70.18496-63.11936-113.84832 10.48576-73.95328 42.10688-38.89152 46.4896-9.50272h46.42816l50.56512 25.53856z"
+                                                fill="#F1D1A4" p-id="11239"></path><path
+                                                d="M639.2832 912.93696a96.95232 96.95232 0 0 1-57.56928 18.98496 96.93184 96.93184 0 0 1-60.0064-20.91008l-9.728-0.02048c-254.07488 0-460.0832 22.46656-460.0832 50.21696S257.92512 1011.42528 512 1011.42528s460.0832-22.48704 460.0832-50.23744c0-22.91712-140.63616-42.20928-332.8-48.25088z"
+                                                fill="#B7CED2" p-id="11240"></path><path
+                                                d="M735.92832 593.79712c-44.9536-43.008-270.47936-47.616-270.47936-47.616C347.19744 546.16064 245.76 607.70304 245.76 607.70304c-20.43904 17.05984-167.15776 223.5392-73.8304 280.65792C265.27744 945.4592 512 931.1232 512 931.1232c-16.24064-16.77312-65.47456-172.48256 41.39008-174.91968a97.85344 97.85344 0 0 1 28.32384-4.56704c27.7504 0 52.46976 11.55072 69.79584 29.63456 4.03456 1.76128 7.96672 3.3792 12.20608 5.34528 32.768 15.2576 24.24832 39.81312 11.79648 64.16384a86.85568 86.85568 0 0 1-19.08736 45.79328c-0.32768 7.5776 2.39616 14.17216 10.40384 19.27168 56.64768 36.06528 183.68512-24.94464 183.68512-24.94464 53.32992-128.06144-114.5856-297.10336-114.5856-297.10336z"
+                                                fill="#F1D1A4" p-id="11241"></path><path
+                                                d="M348.8768 655.7696h288.39936v36.0448H348.8768v-36.0448zM349.5936 799.98976v36.0448h87.67488c0-12.53376 1.8432-24.61696 5.24288-36.0448H349.5936zM497.00864 727.87968h-148.11136v36.06528h109.60896a125.5424 125.5424 0 0 1 38.5024-36.06528zM774.20544 959.56992l-92.44672-58.55232a119.3984 119.3984 0 0 0 11.1616-82.0224c-14.19264-64.26624-77.55776-104.89856-141.47584-90.76736-63.87712 14.1312-104.20224 77.70112-89.96864 141.94688 14.19264 64.26624 77.55776 104.89856 141.43488 90.76736a117.10464 117.10464 0 0 0 58.63424-32.48128l94.43328 59.78112a16.896 16.896 0 0 0 23.40864-5.16096 17.1008 17.1008 0 0 0-5.18144-23.51104z m-279.69536-96.70656c-10.15808-45.89568 18.6368-91.29984 64.28672-101.39648 45.6704-10.09664 90.91072 18.92352 101.08928 64.8192 10.11712 45.91616-18.6368 91.29984-64.32768 101.39648-45.62944 10.11712-90.86976-18.90304-101.04832-64.8192z"
+                                                fill="#8E5711" p-id="11242"></path><path
+                                                d="M583.68 532.84864h-161.56672c-160.27648 0-290.67264 128.53248-290.67264 286.53568v15.91296c0 95.8464 128.28672 95.8464 290.67264 95.8464h33.64864a95.9488 95.9488 0 0 1-11.79648-32.68608h-21.83168c-159.98976 0-258.00704-3.03104-258.00704-63.13984v-15.91296c0-139.96032 115.75296-253.8496 258.00704-253.8496H583.68c142.2336 0 258.00704 113.88928 258.00704 253.8496v15.91296c0 35.00032-59.0848 50.56512-115.99872 57.52832-3.91168 11.53024 29.2864 25.78432 41.6768 30.14656 62.48448-15.09376 107.008-23.12192 107.008-87.69536v-15.91296c-0.02048-158.02368-130.41664-286.53568-290.69312-286.53568z"
+                                                fill="#8E5711" p-id="11243"></path><path
+                                                d="M512 515.072a11.55072 11.55072 0 0 1-5.48864-1.37216c-2.048-1.14688-53.08416-29.63456-104.59136-76.36992-30.55616-27.56608-54.92736-55.84896-72.47872-83.8656-22.56896-35.77856-33.9968-71.5776-33.9968-106.20928 0-65.88416 53.80096-119.66464 119.68512-119.66464 22.36416 0 46.03904 8.43776 66.80576 23.47008A125.1328 125.1328 0 0 1 512 182.0672a124.86656 124.86656 0 0 1 30.08512-31.00672c20.76672-15.27808 44.4416-23.47008 66.80576-23.47008a119.808 119.808 0 0 1 119.68512 119.66464c0 34.63168-11.44832 70.43072-33.75104 106.20928-17.55136 28.03712-41.96352 56.29952-72.47872 83.8656-51.75296 46.73536-102.56384 74.99776-104.59136 76.36992a13.74208 13.74208 0 0 1-5.75488 1.37216zM415.1296 150.38464a97.0752 97.0752 0 0 0-96.8704 96.8704c0 69.28384 53.59616 132.1984 98.48832 172.76928a634.28608 634.28608 0 0 0 95.27296 70.43072 616.05888 616.05888 0 0 0 95.27296-70.43072c44.87168-40.5504 98.44736-103.48544 98.44736-172.76928a97.0752 97.0752 0 0 0-96.84992-96.8704c-38.76864 0-76.5952 31.90784-86.15936 60.6208a11.264 11.264 0 0 1-21.42208 0c-9.58464-28.71296-47.43168-60.6208-86.17984-60.6208z"
+                                                fill="#8E5711" p-id="11244"></path>
+                                        </svg>
+                                    </span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="font-weight-medium">行为总数</div>
+                                        <div class="text-muted">25,024,046</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p></p>
+            <div class="container-xl">
+                <div class="card d-flex flex-column">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="#">
+                                <img src="/imgs/card.png" class="w-100 h-100 object-cover" alt="Card side image"/>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h3 class="card-title">欢迎使用用户网购行为分析系统！</h3>
+                                <div class="text-muted">
+                                    用户网购行为分析系统，是一个可以帮助您了解、分析、优化您的用户购物体验的智能系统。您可以通过本系统分析用户的行为数据，例如点击、购买、加入购物车、收藏等等指标，从而发现用户的需求和偏好，提高您的产品或服务的质量和效果，做到个性化推荐。本系统还可以为您提供个性化的建议和解决方案，让您轻松实现用户增长和留存的目标。
+                                </div>
+                                <div class="d-flex align-items-center pt-4 mt-auto">
+                                    <span class="avatar" style="background-image: url(imgs/head.jpg)"></span>
+                                    <div class="ms-3">
+                                        <div class="text-body">JIANLONG LUO</div>
+                                        <div class="text-muted">2023-4-2</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -183,32 +321,5 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function () {
-        // 绑定侧边栏导航的点击事件
-        $('div div a').click(function (e) {
-            e.preventDefault();  // 防止链接跳转
-            var target = $(this).attr('data-target');  // 获取目标页面的名称
-            // 发起AJAX请求
-            if (target === 'index') {
-                // 如果目标页面为index，则直接跳转到首页
-                window.location.href = 'index.html';
-            } else {
-                $.ajax({
-                    url: target + '.html',  // 用目标页面的名称构造URL地址
-                    type: 'GET',            // 请求方法
-                    dataType: 'html',       // 响应的数据类型
-                    success: function (data) {  // 成功获取响应数据之后的回调函数
-                        $('#main-display,#banner').html(data);  // 将获取的HTML代码替换主显示区域的内容
-                    },
-                    error: function (xhr, status, error) {  // 发生错误时的回调函数
-                        console.log(error);         // 输出错误信息
-                    }
-                });
-            }
-        });
-    });
-</script>
 </body>
 </html>

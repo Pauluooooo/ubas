@@ -93,9 +93,8 @@ new Vue({
                 }
             }else {
                 axios.post('/api/user/phone/login', this.phoneForm)
-                    .then(({data}) => {
+                    .then(response => {
                         this.showSuccessNotification("登录成功！");
-                        sessionStorage.setItem("token",data);
                         location.href = "/index.html"
                     })
                     .catch(error => {
