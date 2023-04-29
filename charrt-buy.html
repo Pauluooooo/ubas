@@ -2,24 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>数据导入</title>
+    <title>用户行为分析系统</title>
     <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<div class="page">
+<div class="page" id="app">
     <!-- 侧边栏 -->
     <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a href="#" onclick="location.href='index.html'" class="navbar-brand navbar-brand-autodark">
+            <a href="#" onclick="location.href='other.html'" class="navbar-brand navbar-brand-autodark">
                 用户网购行为分析系统
             </a>
             <div class="navbar-collapse collapse show" id="sidebar-menu">
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav pt-lg-3">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="location.href='index.html'">
+                            <a class="nav-link" href="#" onclick="location.href='other.html'">
                                 <span class="nav-link-icon d-md-none d-lg-inline-block">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -33,24 +33,7 @@
                                 <span class="nav-link-title">主页</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="location.href='import.html'">
-                                <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                         class="icon icon-tabler icon-tabler-database-import" width="24" height="24"
-                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                         stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M4 6c0 1.657 3.582 3 8 3s8 -1.343 8 -3s-3.582 -3 -8 -3s-8 1.343 -8 3"></path>
-                                        <path d="M4 6v6c0 1.657 3.582 3 8 3c.856 0 1.68 -.05 2.454 -.144m5.546 -2.856v-6"></path>
-                                        <path d="M4 12v6c0 1.657 3.582 3 8 3c.171 0 .341 -.002 .51 -.006"></path>
-                                        <path d="M19 22v-6"></path>
-                                        <path d="M22 19l-3 -3l-3 3"></path>
-                                    </svg>
-                                </span>
-                                <span class="nav-link-title">数据导入</span>
-                            </a>
-                        </li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="false"
                                role="button" aria-expanded="true">
@@ -69,7 +52,7 @@
                                 <span class="nav-link-title">用户行为可视化</span>
                             </a>
                             <div class="dropdown-menu" data-bs-popper="static">
-                                <a class="dropdown-item" href="#" onclick="location.href='chart-click.html'">
+                                <a class="dropdown-item" href="#" onclick="location.href='charrt-click.html'">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
                                         <svg t="1680784105260" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                              xmlns="http://www.w3.org/2000/svg" p-id="5049"
@@ -86,9 +69,9 @@
                                                 fill="#434A54" p-id="5054"></path>
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">用户点击分析</span>
+                                    <span class="nav-link-title">时间维度分析</span>
                                 </a>
-                                <a class="dropdown-item" href="#" onclick="location.href='chart-buy.html'">
+                                <a class="dropdown-item" href="#" onclick="location.href='charrt-buy.html'">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
                                         <svg t="1680784105260" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                              xmlns="http://www.w3.org/2000/svg" p-id="5049"
@@ -105,9 +88,9 @@
                                                 fill="#434A54" p-id="5054"></path>
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">用户购买分析</span>
+                                    <span class="nav-link-title">行为分析</span>
                                 </a>
-                                <a class="dropdown-item" href="#" onclick="location.href='chart-cart.html'">
+                                <a class="dropdown-item" href="#" onclick="location.href='charrt-cart.html'">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
                                         <svg t="1680784105260" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                              xmlns="http://www.w3.org/2000/svg" p-id="5049"
@@ -124,79 +107,7 @@
                                                 fill="#434A54" p-id="5054"></path>
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">用户加入购物车分析</span>
-                                </a>
-                                <a class="dropdown-item" href="#" onclick="location.href='chart-collection.html'">
-                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                        <svg t="1680784105260" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                                             xmlns="http://www.w3.org/2000/svg" p-id="5049"
-                                             width="200" height="200"><path
-                                                d="M277.398 874.572c0 11.78-9.53 21.34-21.34 21.34H128.088c-11.746 0-21.306-9.56-21.306-21.34V618.63c0-11.778 9.56-21.308 21.306-21.308h127.97c11.81 0 21.34 9.532 21.34 21.308v255.942z"
-                                                fill="#A0D468" p-id="5050"></path><path
-                                                d="M490.694 874.572c0 11.78-9.56 21.34-21.34 21.34h-127.97c-11.778 0-21.338-9.56-21.338-21.34V277.396c0-11.78 9.56-21.338 21.338-21.338h127.97c11.78 0 21.34 9.558 21.34 21.338v597.176z"
-                                                fill="#4FC2E9" p-id="5051"></path><path
-                                                d="M703.958 874.572c0 11.78-9.53 21.34-21.308 21.34H554.68c-11.78 0-21.34-9.56-21.34-21.34V490.66c0-11.78 9.56-21.306 21.34-21.306h127.968c11.78 0 21.308 9.528 21.308 21.306v383.912z"
-                                                fill="#48CFAD" p-id="5052"></path><path
-                                                d="M917.252 874.572c0 11.78-9.56 21.34-21.338 21.34h-127.972c-11.778 0-21.306-9.56-21.306-21.34V149.426c0-11.78 9.53-21.338 21.306-21.338h127.972c11.778 0 21.338 9.558 21.338 21.338v725.146z"
-                                                fill="#5D9CEC" p-id="5053"></path><path
-                                                d="M1002.576 853.266H21.458c-11.78 0-21.34 9.528-21.34 21.306s9.56 21.34 21.34 21.34h981.12c11.78 0 21.306-9.56 21.306-21.34s-9.528-21.306-21.308-21.306z"
-                                                fill="#434A54" p-id="5054"></path>
-                                        </svg>
-                                    </span>
-                                    <span class="nav-link-title">用户收藏商品分析</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="false"
-                               role="button" aria-expanded="true">
-                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             class="icon icon-tabler icon-tabler-user-cog" width="24" height="24"
-                                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                             stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                                            <path d="M6 21v-2a4 4 0 0 1 4 -4h2.5"></path>
-                                            <path d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                                            <path d="M19.001 15.5v1.5"></path>
-                                            <path d="M19.001 21v1.5"></path>
-                                            <path d="M22.032 17.25l-1.299 .75"></path>
-                                            <path d="M17.27 20l-1.3 .75"></path>
-                                            <path d="M15.97 17.25l1.3 .75"></path>
-                                            <path d="M20.733 20l1.3 .75"></path>
-                                        </svg>
-                                    </span>
-                                <span class="nav-link-title">管理员模块</span>
-                            </a>
-                            <div class="dropdown-menu" data-bs-popper="static">
-                                <a class="dropdown-item" href="#" onclick="location.href='change-user.html'">
-                                        <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                 class="icon icon-tabler icon-tabler-user-edit" width="24" height="24"
-                                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                                 stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                                                <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5"></path>
-                                                <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>
-                                            </svg>
-                                        </span>
-                                    <span class="nav-link-title">修改用户</span>
-                                </a>
-                                <a class="dropdown-item" href="#" onclick="location.href='change-admin.html'">
-                                        <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                 class="icon icon-tabler icon-tabler-user-edit" width="24" height="24"
-                                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                                 stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                                                <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5"></path>
-                                                <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z"></path>
-                                            </svg>
-                                        </span>
-                                    <span class="nav-link-title">修改管理员</span>
+                                    <span class="nav-link-title">商品分析</span>
                                 </a>
                             </div>
                         </li>
@@ -208,21 +119,119 @@
 
     <div class="page-wrapper" id="banner">
         <div class="page-body" id="main-display">
-            <form class="dropzone" id="dropzone-default" action="." autocomplete="off" novalidate>
-                <div class="fallback">
-                    <input name="file" type="file"/>
+            <div class="row row-deck row-cards">
+                <div class="col-lo-6">
+                    <div class="card-body">
+                        <div class="container-xl">
+                            <div id="mountNode"></div>
+                        </div>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
-
-<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.1/dist/g2.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.1/dist/data-set.min.js"></script>
+<script src="js/http_cdn.jsdelivr.net_npm_vue_dist_vue.js"></script>
+<script src="js/http_unpkg.com_axios_dist_axios.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        new Dropzone("#dropzone-default")
+    let click;
+    new Vue({
+        el: '#app',
+        methods: {
+            getData(){
+                axios.post('/api/chart/buy')
+                    .then(response => {
+                        click = response.data.data.data;
+                    })
+                    .catch(error => {
+                        console.error(error)
+                    });
+            },
+        },
+        mounted() {
+            this.getData()
+        }
     })
+    var _DataSet = DataSet,
+        DataView = _DataSet.DataView;
+    var data = [{
+        action: '点击',
+        pv: 25000000
+    }, {
+        action: '放入购物车',
+        pv: 2779564
+    },  {
+        action: '加入喜欢',
+        pv: 1451630
+    }, {
+        action: '完成交易',
+        pv: 1006127
+    }];
+
+    var dv = new DataView().source(data);
+    dv.transform({
+        type: 'map',
+        callback: function callback(row) {
+            row.percent = row.pv / 25000000;
+            return row;
+        }
+    });
+    data = dv.rows;
+    var chart = new G2.Chart({
+        container: 'mountNode',
+        forceFit: true,
+        height: window.innerHeight,
+        padding: [20, 120, 95]
+    });
+    chart.source(data, {
+        percent: {
+            nice: false
+        }
+    });
+    chart.axis(false);
+    chart.tooltip({
+        showTitle: false,
+        itemTpl: '<li data-index={index} style="margin-bottom:4px;">' + '<span style="background-color:{color};" class="g2-tooltip-marker"></span>' + '{name}<br/>' + '<span style="padding-left: 16px">浏览人数：{pv}</span><br/>' + '<span style="padding-left: 16px">占比：{percent}</span><br/>' + '</li>'
+    });
+    chart.coord('rect').transpose().scale(1, -1);
+    chart.intervalSymmetric().position('action*percent').shape('funnel').color('action', ['#0050B3', '#1890FF', '#40A9FF', '#69C0FF', '#BAE7FF']).label('action*pv', function(action, pv) {
+        return action + ' ' + pv;
+    }, {
+        offset: 35,
+        labelLine: {
+            lineWidth: 1,
+            stroke: 'rgba(0, 0, 0, 0.15)'
+        }
+    }).tooltip('action*pv*percent', function(action, pv, percent) {
+        return {
+            name: action,
+            percent: parseInt(percent * 100) + '%',
+            pv: pv
+        };
+    });
+    data.forEach(function(obj) {
+        // 中间标签文本
+        chart.guide().text({
+            top: true,
+            position: {
+                action: obj.action,
+                percent: 'median'
+            },
+            content: parseInt(obj.percent * 100) + '%', // 显示的文本内容
+            style: {
+                fill: '#fff',
+                fontSize: '12',
+                textAlign: 'center',
+                shadowBlur: 2,
+                shadowColor: 'rgba(0, 0, 0, .45)'
+            }
+        });
+    });
+    chart.render();
+
 </script>
 </body>
-</h
+</html>

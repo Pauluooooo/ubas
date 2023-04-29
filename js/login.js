@@ -72,8 +72,18 @@ new Vue({
                 if (this.validateRegisterForm()) {
                     axios.post('/api/user/register', this.registerForm)
                         .then(response => {
-                            this.showSuccessNotification("注册成功！")
-                            location.href = "/index.html"
+                            const success = response.data.success;
+                            if (success) {
+                                this.showSuccessNotification("注册成功！")
+                                if (this.registerForm.username === 'admin') {
+                                    location.href = "/index.html"
+                                } else {
+                                    location.href = "/other.html"
+                                }
+                            }else {
+                                this.showErrorNotification("注册失败！")
+                            }
+
                         })
                         .catch(error => {
                             console.error(error)
@@ -84,8 +94,17 @@ new Vue({
                 if (this.validateForm()) {
                     axios.post('/api/user/login', this.loginForm)
                         .then(response => {
-                            this.showSuccessNotification("登录成功！")
-                            location.href = "/index.html"
+                            const success = response.data.success;
+                            if (success) {
+                                this.showSuccessNotification("登录成功！")
+                                if (this.loginForm.username === 'admin') {
+                                    location.href = "/index.html"
+                                } else {
+                                    location.href = "/other.html"
+                                }
+                            }else {
+                                this.showErrorNotification("登录失败！")
+                            }
                         })
                         .catch(error => {
                             console.error(error)
@@ -94,8 +113,13 @@ new Vue({
             }else {
                 axios.post('/api/user/phone/login', this.phoneForm)
                     .then(response => {
-                        this.showSuccessNotification("登录成功！");
-                        location.href = "/index.html"
+                        const success = response.data.success;
+                        if (success) {
+                            this.showSuccessNotification("登录成功！");
+                            location.href = "/index.html"
+                        }else {
+                            this.showErrorNotification("登录失败！");
+                        }
                     })
                     .catch(error => {
                         console.error(error)

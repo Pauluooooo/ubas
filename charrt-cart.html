@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户行为分析系统</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div class="page">
+    <!-- 侧边栏 -->
+    <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a href="#" onclick="location.href='other.html'" class="navbar-brand navbar-brand-autodark">
+                用户网购行为分析系统
+            </a>
+            <div class="navbar-collapse collapse show" id="sidebar-menu">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav pt-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="location.href='other.html'">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+                                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+                                    </svg>
+                                </span>
+                                <span class="nav-link-title">主页</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="false"
+                               role="button" aria-expanded="true">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                         viewBox="0 0 24 24"
+                                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                         stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"
+                                                                       fill="none"></path><path
+                                            d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5"></path><path
+                                            d="M12 12l8 -4.5"></path><path
+                                            d="M12 12l0 9"></path><path d="M12 12l-8 -4.5"></path><path
+                                            d="M16 5.25l-8 4.5"></path>
+                                    </svg>
+                                </span>
+                                <span class="nav-link-title">用户行为可视化</span>
+                            </a>
+                            <div class="dropdown-menu" data-bs-popper="static">
+                                <a class="dropdown-item" href="#" onclick="location.href='charrt-click.html'">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <svg t="1680784105260" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg" p-id="5049"
+                                             width="200" height="200"><path
+                                                d="M277.398 874.572c0 11.78-9.53 21.34-21.34 21.34H128.088c-11.746 0-21.306-9.56-21.306-21.34V618.63c0-11.778 9.56-21.308 21.306-21.308h127.97c11.81 0 21.34 9.532 21.34 21.308v255.942z"
+                                                fill="#A0D468" p-id="5050"></path><path
+                                                d="M490.694 874.572c0 11.78-9.56 21.34-21.34 21.34h-127.97c-11.778 0-21.338-9.56-21.338-21.34V277.396c0-11.78 9.56-21.338 21.338-21.338h127.97c11.78 0 21.34 9.558 21.34 21.338v597.176z"
+                                                fill="#4FC2E9" p-id="5051"></path><path
+                                                d="M703.958 874.572c0 11.78-9.53 21.34-21.308 21.34H554.68c-11.78 0-21.34-9.56-21.34-21.34V490.66c0-11.78 9.56-21.306 21.34-21.306h127.968c11.78 0 21.308 9.528 21.308 21.306v383.912z"
+                                                fill="#48CFAD" p-id="5052"></path><path
+                                                d="M917.252 874.572c0 11.78-9.56 21.34-21.338 21.34h-127.972c-11.778 0-21.306-9.56-21.306-21.34V149.426c0-11.78 9.53-21.338 21.306-21.338h127.972c11.778 0 21.338 9.558 21.338 21.338v725.146z"
+                                                fill="#5D9CEC" p-id="5053"></path><path
+                                                d="M1002.576 853.266H21.458c-11.78 0-21.34 9.528-21.34 21.306s9.56 21.34 21.34 21.34h981.12c11.78 0 21.306-9.56 21.306-21.34s-9.528-21.306-21.308-21.306z"
+                                                fill="#434A54" p-id="5054"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">时间维度分析</span>
+                                </a>
+                                <a class="dropdown-item" href="#" onclick="location.href='charrt-buy.html'">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <svg t="1680784105260" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg" p-id="5049"
+                                             width="200" height="200"><path
+                                                d="M277.398 874.572c0 11.78-9.53 21.34-21.34 21.34H128.088c-11.746 0-21.306-9.56-21.306-21.34V618.63c0-11.778 9.56-21.308 21.306-21.308h127.97c11.81 0 21.34 9.532 21.34 21.308v255.942z"
+                                                fill="#A0D468" p-id="5050"></path><path
+                                                d="M490.694 874.572c0 11.78-9.56 21.34-21.34 21.34h-127.97c-11.778 0-21.338-9.56-21.338-21.34V277.396c0-11.78 9.56-21.338 21.338-21.338h127.97c11.78 0 21.34 9.558 21.34 21.338v597.176z"
+                                                fill="#4FC2E9" p-id="5051"></path><path
+                                                d="M703.958 874.572c0 11.78-9.53 21.34-21.308 21.34H554.68c-11.78 0-21.34-9.56-21.34-21.34V490.66c0-11.78 9.56-21.306 21.34-21.306h127.968c11.78 0 21.308 9.528 21.308 21.306v383.912z"
+                                                fill="#48CFAD" p-id="5052"></path><path
+                                                d="M917.252 874.572c0 11.78-9.56 21.34-21.338 21.34h-127.972c-11.778 0-21.306-9.56-21.306-21.34V149.426c0-11.78 9.53-21.338 21.306-21.338h127.972c11.778 0 21.338 9.558 21.338 21.338v725.146z"
+                                                fill="#5D9CEC" p-id="5053"></path><path
+                                                d="M1002.576 853.266H21.458c-11.78 0-21.34 9.528-21.34 21.306s9.56 21.34 21.34 21.34h981.12c11.78 0 21.306-9.56 21.306-21.34s-9.528-21.306-21.308-21.306z"
+                                                fill="#434A54" p-id="5054"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">行为分析</span>
+                                </a>
+                                <a class="dropdown-item" href="#" onclick="location.href='charrt-cart.html'">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <svg t="1680784105260" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                             xmlns="http://www.w3.org/2000/svg" p-id="5049"
+                                             width="200" height="200"><path
+                                                d="M277.398 874.572c0 11.78-9.53 21.34-21.34 21.34H128.088c-11.746 0-21.306-9.56-21.306-21.34V618.63c0-11.778 9.56-21.308 21.306-21.308h127.97c11.81 0 21.34 9.532 21.34 21.308v255.942z"
+                                                fill="#A0D468" p-id="5050"></path><path
+                                                d="M490.694 874.572c0 11.78-9.56 21.34-21.34 21.34h-127.97c-11.778 0-21.338-9.56-21.338-21.34V277.396c0-11.78 9.56-21.338 21.338-21.338h127.97c11.78 0 21.34 9.558 21.34 21.338v597.176z"
+                                                fill="#4FC2E9" p-id="5051"></path><path
+                                                d="M703.958 874.572c0 11.78-9.53 21.34-21.308 21.34H554.68c-11.78 0-21.34-9.56-21.34-21.34V490.66c0-11.78 9.56-21.306 21.34-21.306h127.968c11.78 0 21.308 9.528 21.308 21.306v383.912z"
+                                                fill="#48CFAD" p-id="5052"></path><path
+                                                d="M917.252 874.572c0 11.78-9.56 21.34-21.338 21.34h-127.972c-11.778 0-21.306-9.56-21.306-21.34V149.426c0-11.78 9.53-21.338 21.306-21.338h127.972c11.778 0 21.338 9.558 21.338 21.338v725.146z"
+                                                fill="#5D9CEC" p-id="5053"></path><path
+                                                d="M1002.576 853.266H21.458c-11.78 0-21.34 9.528-21.34 21.306s9.56 21.34 21.34 21.34h981.12c11.78 0 21.306-9.56 21.306-21.34s-9.528-21.306-21.308-21.306z"
+                                                fill="#434A54" p-id="5054"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">商品分析</span>
+                                </a>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="page-wrapper" id="banner">
+        <div class="page-body" id="main-display">
+            <div id="mountNode"></div>
+        </div>
+    </div>
+
+</div>
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.1/dist/g2.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.1/dist/data-set.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/assets/lib/jquery-3.2.1.min.js"></script>
+<style>
+    .bottom-tool-box{position: absolute; bottom:0px; left: 0px; width: 100%; height:40px; z-index:1000}
+    .bottom-tool-box .sort-button {width: auto; height:40%; position: absolute; top:30%; left:70%}
+</style>
+<script>
+    var sortType = 'positive';
+    var data = [{
+        type: '3122135',
+        value: 358
+    }, {
+        type: '3031354',
+        value: 209
+    }, {
+        type: '2560262',
+        value: 173
+    }, {
+        type: '3964583',
+        value: 172
+    }, {
+        type: '2964774',
+        value: 162
+    }, {
+        type: '1910706',
+        value: 150
+    }, {
+        type: '1415828',
+        value: 142
+    }, {
+        type: '740947',
+        value: 139
+    }, {
+        type: '1116492',
+        value: 135
+    }, {
+        type: '1034594',
+        value: 130
+    }];
+    var chart = new G2.Chart({
+        container: 'mountNode',
+        forceFit: true,
+        height: window.innerHeight,
+        padding: [20, 40, 50, 124]
+    });
+    chart.source(data, {
+        value: {
+            max: 1300,
+            min: 0,
+            nice: false,
+            alias: '购买次数'
+        }
+    });
+    chart.axis('type', {
+        label: {
+            textStyle: {
+                fill: '#8d8d8d',
+                fontSize: 12
+            }
+        },
+        tickLine: {
+            alignWithLabel: false,
+            length: 0
+        },
+        line: {
+            lineWidth: 0
+        }
+    });
+    chart.axis('value', {
+        label: null,
+        title: {
+            offset: 30,
+            textStyle: {
+                fontSize: 12,
+                fontWeight: 300
+            }
+        }
+    });
+    chart.legend(false);
+    chart.coord().transpose();
+    chart.interval().position('type*value').size(26).opacity(1).label('value', {
+        textStyle: {
+            fill: '#8d8d8d'
+        },
+        offset: 10
+    });
+    chart.render();
+    $('.sort-button').click(function() {
+        sortType = sortType === 'positive' ? 'negative' : 'positive';
+        sortData(sortType);
+        chart.repaint();
+    });
+
+    function sortData(sortType) {
+        if (sortType === 'positive') {
+            data.sort(function(a, b) {
+                return b.value - a.value;
+            });
+        } else {
+            data.sort(function(a, b) {
+                return a.value - b.value;
+            });
+        }
+    }
+</script>
+</body>
+</html>
